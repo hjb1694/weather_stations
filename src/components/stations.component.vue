@@ -43,7 +43,7 @@ export default {
             offset: 0, 
             inViewStations: [],
             allStations: [], 
-            isLoading: false, 
+            isLoading: true, 
             nextBtnIsDisabled: false, 
             previousBtnIsDisabled: true
         }
@@ -78,9 +78,12 @@ export default {
         .then(data => {
             this.allStations = data.features;
             this.inViewStations = data.features.slice(this.offset, 9);
+            this.isLoading = false;
         })
         .catch(e => {
             console.error(e);
+            this.isLoading = false;
+            this.isLoadError = true;
         });
     }
 }
