@@ -27,7 +27,7 @@
         Next
         </button>
     </div>
-    <div v-else>Oh No! An Error has Occurred!</div>
+    <div class="error-msg" v-else>Oh No! An Error has Occurred!</div>
     
 </template>
 
@@ -116,5 +116,10 @@ export default {
     .loading{
         font-size:2.5rem;
         color:#fff;
+    }
+
+    .error-msg{
+        font-size:2rem;
+        margin-top:3rem;
     }
 </style>
